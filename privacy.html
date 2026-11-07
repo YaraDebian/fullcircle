@@ -3,74 +3,114 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Full Circle — Privacy Policy</title>
-<style>
-  :root { --bg:#eeeae0; --surface:#fff; --ink:#26231f; --soft:#6f6a5c; --ring:#2f4a3e; --accent:#b8752f; --border:rgba(38,35,31,0.12); }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
-  .wrap { max-width:720px; margin:0 auto; padding:40px 22px 80px; }
-  h1 { font-family:Georgia,serif; font-size:30px; margin:0 0 4px; }
-  .eff { color:var(--soft); font-size:14px; margin:0 0 28px; }
-  h2 { font-family:Georgia,serif; font-size:20px; margin:34px 0 10px; }
-  p, li { font-size:15.5px; color:#33302b; }
-  a { color:var(--accent); }
-  ul { padding-left:20px; }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:18px 20px; margin-top:14px; }
-  hr { border:none; border-top:1px solid var(--border); margin:34px 0; }
-  .muted { color:var(--soft); font-size:13.5px; }
-</style>
+<title>Full Circle Privacy Policy</title>
+<meta name="description" content="What Full Circle collects, why, who processes it, and the choices you have." />
+<meta name="theme-color" content="#F7F5EC" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1A1816" media="(prefers-color-scheme: dark)" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
 <div class="wrap">
-  <h1>Full Circle — Privacy Policy</h1>
-  <p class="eff">Effective 25 August 2026</p>
+  <nav class="nav">
+    <a class="brand" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M71.4 32 A28 28 0 1 0 71.4 68" fill="none" stroke="var(--fern)" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="44" r="5" fill="var(--apricot)"/><circle cx="81" cy="55" r="4" fill="var(--butter)"/></svg>Full Circle</a>
+    <div class="nav-links"><a href="/support">Support</a><a href="/privacy" aria-current="page">Privacy</a></div>
+  </nav>
 
-  <p>Full Circle (“the app”) is a personal tool for saving things you want to do or appreciate, and closing the loop on them. This policy explains what data the app collects, how it is used, and the choices you have.</p>
+  <main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective 7 November 2026</p>
+
+  <p>Full Circle (“the app”) helps you save things you want to do or appreciate, and close the loop on them. This policy explains what we collect, why, who helps us process it, how long we keep it, and the rights you have.</p>
+
+  <div class="card">
+    <p><strong>In short:</strong> we collect what you put into the app so the app can work. We don't sell your data, show ads, or track you across other apps and websites. Some of your content is processed by AI to power features, and you can limit that. You can delete your account and everything in it from inside the app.</p>
+  </div>
 
   <h2>Who we are</h2>
-  <p>Full Circle is developed by Yara Debian (“we”, “us”). For any privacy question, contact us at <a href="mailto:yaradebian1@gmail.com">yaradebian1@gmail.com</a>.</p>
+  <p>Full Circle is developed by Yara Debian, who is the data controller for the app (“we”, “us”). For anything about your privacy, email <a href="mailto:support@getfullcircle.app">support@getfullcircle.app</a>.</p>
 
   <h2>What we collect</h2>
   <ul>
-    <li><strong>Account information</strong> — your email address and password, to create and secure your account. Authentication is handled by Supabase; your password is stored only as a secure hash, never in plain text.</li>
-    <li><strong>Your content</strong> — the items you save: titles, notes, links, attached photos, item type, reminder timing, ratings, and reflections. This is the core data that makes the app work.</li>
-    <li><strong>Derived activity data</strong> — simple aggregates of your saves (counts by type, follow-through timing) used to generate your taste profile.</li>
+    <li><strong>Account:</strong> your email address and password. The password is stored only as a secure hash by our authentication provider, never in plain text.</li>
+    <li><strong>What you save:</strong> titles, notes on why you saved something, links, photos you attach, type, timing preferences, reminders, status, ratings, and reflections.</li>
+    <li><strong>Content from links you save:</strong> when you save a link, our server fetches that page to fill in the title and preview image and to write a short summary. The page text and summary are stored with the item.</li>
+    <li><strong>What the app creates for you:</strong> your weekly plans and goals, and your monthly reads (a written recap plus counts of what you saved and closed).</li>
+    <li><strong>Settings:</strong> whether check-in notifications are on. Display preferences such as theme, haptics and motion, and the AI content setting, stay on your device.</li>
+    <li><strong>Notifications:</strong> if you allow notifications, a push token for your device and its platform (iOS or Android).</li>
+    <li><strong>Technical data:</strong> your device's time zone is sent with requests so timing works in your local time; it isn't stored. Our servers process your IP address to deliver requests and limit abuse, and it may appear in short-lived server logs.</li>
   </ul>
-  <p>We do <strong>not</strong> collect analytics, advertising identifiers, precise location, or your contacts, and we do <strong>not</strong> track you across other apps or websites.</p>
+  <p>We do <strong>not</strong> collect analytics, advertising identifiers, precise location, or your contacts.</p>
 
-  <h2>How your content is used with AI</h2>
-  <p>To generate your taste profile and to help file saved links (auto title, thumbnail, and short summary), the app sends relevant content — item titles, your notes, link summaries, and ratings — to our backend, which calls Anthropic’s Claude API to produce the text you see.</p>
-  <div class="card">
-    <p style="margin:0 0 8px"><strong>Your control:</strong> you can turn off sending your saved content for taste insights with the “read my saved content” toggle in the app.</p>
-    <p style="margin:0" class="muted">This data is sent only to produce features you asked for. It is not used to train AI models — Anthropic does not train on data submitted through its API.</p>
+  <h2>How we use it, and our legal basis</h2>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Purpose</th><th>Legal basis (GDPR)</th></tr>
+    <tr><td>Creating your account, storing and syncing what you save, plans, reminders, and monthly reads</td><td>Providing the service you asked for (contract)</td></tr>
+    <tr><td>AI features: filling in saved links, summaries, weekly and daily picks, suggestions, and monthly reads</td><td>Providing the service you asked for (contract). You can limit this; see below.</td></tr>
+    <tr><td>Check-in notifications about things you saved</td><td>Your consent, given through your device's notification permission and the in-app setting. You can withdraw it at any time.</td></tr>
+    <tr><td>Keeping the service secure and preventing abuse (rate limits, logs)</td><td>Our legitimate interest in running a safe, reliable service</td></tr>
+  </table>
   </div>
 
-  <h2>Where your data is stored, and who processes it</h2>
+  <h2>How AI is used</h2>
+  <p>Full Circle uses Anthropic's Claude API, called from our server, to generate text you see in the app.</p>
   <ul>
-    <li><strong>Supabase</strong> — authentication, the database that holds your items, and storage for your photos.</li>
-    <li><strong>Anthropic (Claude API)</strong> — processes content to generate insights and summaries, as described above.</li>
-    <li><strong>Render</strong> — hosts our backend API.</li>
-    <li><strong>Expo / EAS</strong> — delivers app updates and supports notifications.</li>
+    <li><strong>When you save a link:</strong> the link, the page's text or caption, its preview image, and anything you typed are sent to fill in the item and write its summary.</li>
+    <li><strong>When you tap “Surprise me”:</strong> the titles, notes, types, and summaries of your open items, plus a few you loved (with your reflections) or passed on, are sent to pick one for you.</li>
+    <li><strong>For reminder and resurfacing notifications</strong>, if you have them on: an item's title, note, summary, and type are sent to write the notification's wording. You can turn each kind of notification off in Settings.</li>
+    <li><strong>When “Read my saved content” is on</strong> (the default): titles, notes, summaries, ratings, and reflections of your saved items are sent to choose your weekly and daily picks and to write your monthly read. When it's off, picks follow simple rules and your monthly read is based on counts only.</li>
   </ul>
-  <p>These providers process data on our behalf so the app can function.</p>
+  <p>Photos you attach yourself are not sent to the AI. Anthropic processes this data on our behalf only to return a result, doesn't use it to train its models, and keeps it only for a limited period under its commercial terms.</p>
 
-  <h2>Notifications</h2>
-  <p>The app schedules <strong>local notifications</strong> on your device to remind you about things you saved. You can disable them at any time in your device settings.</p>
+  <h2>Who processes your data</h2>
+  <p>We use these providers to run the app. Each processes data only on our instructions, under a data processing agreement.</p>
+  <ul>
+    <li><strong>Supabase</strong>: authentication, database, and photo storage (United States).</li>
+    <li><strong>Render</strong>: hosts our server (United States).</li>
+    <li><strong>Anthropic</strong>: AI processing, as described above (United States).</li>
+    <li><strong>Expo</strong>: app updates and delivery of push notifications. Check-in notifications include the title of the item they're about, so that text passes through Expo and Apple's or Google's push service.</li>
+  </ul>
+  <p>We don't sell or share your personal data with anyone else, except where required by law.</p>
 
-  <h2>Data retention and deletion</h2>
-  <p>We keep your data for as long as your account exists. You can <strong>delete your account</strong> at any time in the app (Settings → delete account); this permanently removes your account and all of the items you saved.</p>
+  <h2>International transfers</h2>
+  <p>Our providers store and process data in the United States. Where data comes from the European Economic Area, the UK, or Switzerland, these transfers are protected by the European Commission's Standard Contractual Clauses in our providers' data processing agreements and, where a provider is certified, the EU–US Data Privacy Framework.</p>
+
+  <h2>How long we keep it</h2>
+  <ul>
+    <li><strong>Your account and content:</strong> for as long as your account exists.</li>
+    <li><strong>When you delete your account</strong> (Settings → Delete account), we permanently delete your account, your saved items, attached photos, plans, monthly reads, settings, and push tokens. Copies in our providers' backups expire on their regular backup schedule.</li>
+    <li><strong>Push tokens</strong> are removed when you sign out or when the push service reports they're no longer valid.</li>
+    <li><strong>Server logs</strong> are kept for a short period for troubleshooting and security, and are set up to exclude the content of your items.</li>
+  </ul>
 
   <h2>Security</h2>
-  <p>Your data is protected by authentication and per-user row-level security, so only you can read or change your items.</p>
+  <p>All traffic is encrypted in transit (HTTPS), and our providers encrypt stored data at rest. Access controls in the database mean each account can only read and change its own data. Photos are stored privately and shown through links that expire. If a data breach affects your personal data, we will notify the relevant authority and, where required, you, as the law requires.</p>
+
+  <h2>Your rights</h2>
+  <p>Depending on where you live (including under the GDPR), you have the right to:</p>
+  <ul>
+    <li><strong>access</strong> your data and get a copy of it in a portable format;</li>
+    <li><strong>correct</strong> it (you can edit anything you save directly in the app);</li>
+    <li><strong>delete</strong> it (in the app, or by emailing us);</li>
+    <li><strong>restrict or object</strong> to certain processing;</li>
+    <li><strong>withdraw consent</strong> at any time, for example by turning off notifications or “Read my saved content”;</li>
+    <li><strong>complain</strong> to your local data protection authority.</li>
+  </ul>
+  <p>To use any of these rights, email <a href="mailto:support@getfullcircle.app">support@getfullcircle.app</a>. We'll reply within one month.</p>
 
   <h2>Children</h2>
-  <p>Full Circle is not directed to children under 13, and we do not knowingly collect personal information from them.</p>
+  <p>Full Circle is not intended for anyone under 16, and we don't knowingly collect data from children. If you believe a child has given us data, contact us and we'll delete it.</p>
 
   <h2>Changes to this policy</h2>
-  <p>We may update this policy from time to time. Material changes will be reflected here with a new effective date.</p>
+  <p>If we change this policy, we'll update the effective date above. For significant changes, we'll also let you know in the app.</p>
+  </main>
 
-  <hr />
-  <p class="muted">Questions about your privacy? Email <a href="mailto:yaradebian1@gmail.com">yaradebian1@gmail.com</a>.</p>
+  <footer>
+    <span>© 2026 Full Circle</span>
+    <span><a href="/support">Support</a> · <a href="mailto:support@getfullcircle.app">support@getfullcircle.app</a></span>
+  </footer>
 </div>
 </body>
 </html>
