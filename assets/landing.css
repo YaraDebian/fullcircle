@@ -47,6 +47,7 @@ button { font-family: inherit; color: inherit; }
 .brand-arc { stroke: var(--fern); }
 .top-actions { display: flex; align-items: center; gap: 10px; }
 .watch { height: 44px; padding: 0 16px; border-radius: 22px; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 800; background: color-mix(in srgb, var(--surface) 70%, transparent); border: 1.5px solid var(--line); cursor: pointer; }
+.watch-hint { display: none; height: 52px; padding: 0 20px; border-radius: 26px; font-size: 16px; }
 .join { text-decoration: none; height: 44px; padding: 0 18px; border-radius: 22px; display: inline-flex; align-items: center; font-size: 15px; font-weight: 800; background: var(--ink); color: var(--ground); }
 
 .ring { position: absolute; left: 50%; top: 51%; width: min(86vh, 74vw); aspect-ratio: 1; transform: translate(-50%, -50%); container-type: inline-size; }
@@ -135,9 +136,9 @@ button { font-family: inherit; color: inherit; }
   .note p { font-size: 14px; }
 }
 @media (max-width: 860px) {
-  .watch { width: 44px; padding: 0; justify-content: center; }
-  .watch span { display: none; }
-  .top-actions { gap: 8px; }
+  .top-actions .watch { display: none; }
+  .hint-text { display: none; }
+  .watch-hint { display: inline-flex; }
   .ring { top: 41%; width: min(98vw, 62vh); }
   .card .pill { padding: 5px 9px; }
   .copy { width: 60cqw; height: 62cqw; }
