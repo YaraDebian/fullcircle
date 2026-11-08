@@ -45,6 +45,8 @@ button { font-family: inherit; color: inherit; }
 .brand { display: flex; align-items: center; gap: 10px; border: none; background: none; padding: 0; cursor: pointer; }
 .brand span { font-size: 23px; letter-spacing: -0.02em; }
 .brand-arc { stroke: var(--fern); }
+.top-actions { display: flex; align-items: center; gap: 10px; }
+.watch { height: 44px; padding: 0 16px; border-radius: 22px; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 800; background: color-mix(in srgb, var(--surface) 70%, transparent); border: 1.5px solid var(--line); cursor: pointer; }
 .join { text-decoration: none; height: 44px; padding: 0 18px; border-radius: 22px; display: inline-flex; align-items: center; font-size: 15px; font-weight: 800; background: var(--ink); color: var(--ground); }
 
 .ring { position: absolute; left: 50%; top: 51%; width: min(86vh, 74vw); aspect-ratio: 1; transform: translate(-50%, -50%); container-type: inline-size; }
@@ -114,6 +116,12 @@ button { font-family: inherit; color: inherit; }
 .note-h { font-size: 20px; line-height: 1.15; letter-spacing: -0.02em; }
 .note p { margin: 0; font-size: 15px; line-height: 1.5; opacity: 0.78; }
 
+
+.player { width: min(1100px, calc(100vw - 32px)); max-width: none; padding: 0; border: none; border-radius: 20px; overflow: visible; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+.player::backdrop { background: rgba(20,24,20,0.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.player video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; background: #000; }
+.player-close { position: absolute; right: 0; top: -54px; width: 44px; height: 44px; border-radius: 22px; border: none; background: rgba(255,255,255,0.92); color: #1F2A22; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+
 .hint { position: absolute; left: 44px; bottom: 30px; display: flex; align-items: center; gap: 14px; }
 .next { height: 52px; padding: 0 20px; border-radius: 26px; border: none; cursor: pointer; font-size: 16px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; background: var(--fern); color: var(--on-fern); }
 .hint-text { font-size: 14px; font-weight: 600; opacity: 0.7; }
@@ -127,6 +135,9 @@ button { font-family: inherit; color: inherit; }
   .note p { font-size: 14px; }
 }
 @media (max-width: 860px) {
+  .watch { width: 44px; padding: 0; justify-content: center; }
+  .watch span { display: none; }
+  .top-actions { gap: 8px; }
   .ring { top: 41%; width: min(98vw, 62vh); }
   .card .pill { padding: 5px 9px; }
   .copy { width: 60cqw; height: 62cqw; }

@@ -31,7 +31,10 @@
       <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path class="brand-arc" d="M27.5 9.5A12 12 0 1 0 27.5 26.5" stroke-width="5" stroke-linecap="round"/><circle cx="31" cy="15" r="1.8" fill="#F2A65A"/><circle cx="31.6" cy="20" r="1.5" fill="#F6D86B"/></svg>
       <span class="display">fullcircle</span>
     </button>
-    <a class="join" href="mailto:support@getfullcircle.app?subject=Join%20the%20fullcircle%20beta">Join the beta</a>
+    <div class="top-actions">
+      <button class="watch" type="button" data-demo aria-label="Watch the demo"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg><span>Watch the demo</span></button>
+      <a class="join" href="mailto:support@getfullcircle.app?subject=Join%20the%20fullcircle%20beta">Join the beta</a>
+    </div>
   </header>
 
   <div class="ring">
@@ -57,7 +60,8 @@
         <div class="v"><div class="pills">
           <span class="pill p-butter">Ramen at Koji</span><span class="pill p-leaf">Read Piranesi</span><span class="pill p-clay">Pottery class</span><span class="pill p-sea">Call Nana</span>
         </div></div>
-      </div></div>
+      </div>
+      </div>
 
       <div class="ch c1"><div aria-hidden="true">
         <span class="chip"><b>01</b>SAVE</span>
@@ -157,6 +161,11 @@
     <a href="mailto:support@getfullcircle.app">support@getfullcircle.app</a>
   </footer>
 </div>
+
+<dialog class="player" aria-label="fullcircle demo video">
+  <button class="player-close" type="button" aria-label="Close video"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <video controls playsinline preload="none" data-poster="assets/demo-poster.jpg" src="assets/demo.mp4"></video>
+</dialog>
 
 <main>
   <section class="sec"><h1 class="sr">fullcircle: save what matters, then close the loop.</h1><p class="sr">Everything you mean to get to, in one place. Scroll and watch what happens when you live it.</p></section>
