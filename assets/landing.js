@@ -165,6 +165,18 @@
     else restart();
   });
 
+  const player = $('.player');
+  const video = player.querySelector('video');
+  document.querySelectorAll('[data-demo]').forEach((b) => b.addEventListener('click', () => {
+    if (!video.poster) video.poster = video.dataset.poster;
+    player.showModal();
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  }));
+  player.querySelector('.player-close').addEventListener('click', () => player.close());
+  player.addEventListener('click', (e) => { if (e.target === player) player.close(); });
+  player.addEventListener('close', () => video.pause());
+
   render();
   wake();
 })();
