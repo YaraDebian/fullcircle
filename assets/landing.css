@@ -107,7 +107,6 @@ button { font-family: inherit; color: inherit; }
 
 .cta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.6cqw; justify-content: center; }
 .btn { height: clamp(40px, 6cqw, 54px); padding: 0 clamp(14px, 2.6cqw, 24px); font-size: clamp(13px, 2cqw, 16px); border-radius: 28px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
-.btn.go { background: var(--fern); color: var(--on-fern); font-weight: 800; box-shadow: 0 12px 28px rgba(63,122,78,0.30); }
 .btn.again { border: 1.5px solid var(--line); background: transparent; font-weight: 700; }
 
 .notes { position: absolute; left: calc(50% + min(86vh, 74vw) * 0.44); top: 51%; width: clamp(200px, calc(50vw - min(86vh, 74vw) * 0.44 - 32px), 320px); height: 0; z-index: 2; }
