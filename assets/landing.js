@@ -143,8 +143,13 @@
     scrollTo({ top: clamp(v, 0, LAST) * unit(), behavior: calm ? 'auto' : 'smooth' });
   }
 
+  let snapTimer = 0;
   function restart() {
-    scrollTo({ top: 0, behavior: 'instant' });
+    // iOS Safari re-snaps to the last section when the toolbar resizes the page after the jump, so pause snapping briefly.
+    root.style.scrollSnapType = 'none';
+    clearTimeout(snapTimer);
+    snapTimer = setTimeout(() => { root.style.scrollSnapType = ''; }, 800);
+    scrollTo(0, 0);
     t = target = 0;
     render();
     if (!calm) stage.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 450, easing: 'ease-out' });
