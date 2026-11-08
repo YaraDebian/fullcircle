@@ -23,7 +23,7 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-snap-type: y proximity; }
+html { -webkit-text-size-adjust: 100%; scroll-snap-type: y proximity; overscroll-behavior-y: none; }
 body {
   margin: 0; background: var(--ground); color: var(--ink);
   font: 400 16px/1.5 "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -34,7 +34,7 @@ button { font-family: inherit; color: inherit; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .display { font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 700; }
 
-.stage { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 620px; margin-bottom: -100vh; margin-bottom: -100svh; overflow: hidden; z-index: 1; }
+.stage { position: sticky; top: 0; height: 100vh; height: 100dvh; min-height: 620px; margin-bottom: -100vh; margin-bottom: -100dvh; overflow: hidden; z-index: 1; }
 .sec { height: 100vh; height: 100svh; scroll-snap-align: start; position: relative; }
 
 .sun, .meadow { position: absolute; inset: 0; pointer-events: none; }
