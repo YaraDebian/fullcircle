@@ -3,49 +3,171 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Full Circle</title>
-<meta name="description" content="Save the things you want to do, then actually close the loop." />
+<title>fullcircle · come full circle</title>
+<meta name="description" content="Save what matters, then close the loop. Everything you mean to get to, in one place, and a circle that fills as you live it." />
 <meta name="theme-color" content="#F7F5EC" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#1A1816" media="(prefers-color-scheme: dark)" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://getfullcircle.app/" />
+<meta property="og:title" content="fullcircle · come full circle" />
+<meta property="og:description" content="Save what matters, then close the loop. In private beta on iPhone." />
+<meta property="og:image" content="https://getfullcircle.app/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="fullcircle: Save what matters. Then close the loop." />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-<link rel="stylesheet" href="assets/site.css" />
+<link rel="preload" href="assets/fonts/BricolageGrotesque_700Bold.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="stylesheet" href="assets/landing.css" />
 </head>
 <body>
-<div class="wrap">
-  <nav class="nav">
-    <a class="brand" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M71.4 32 A28 28 0 1 0 71.4 68" fill="none" stroke="var(--fern)" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="44" r="5" fill="var(--apricot)"/><circle cx="81" cy="55" r="4" fill="var(--butter)"/></svg>Full Circle</a>
-    <div class="nav-links"><a href="/support">Support</a><a href="/privacy">Privacy</a></div>
-  </nav>
+<div class="stage">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="meadow" aria-hidden="true"></div>
 
-  <main>
-    <section class="hero">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M71.4 32 A28 28 0 1 0 71.4 68" fill="none" stroke="var(--fern)" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="44" r="5" fill="var(--apricot)"/><circle cx="81" cy="55" r="4" fill="var(--butter)"/></svg>
-      <h1>Full Circle</h1>
-      <p class="lede">Save the things you want to do, then actually close the loop.</p>
-      <span class="pill">In private beta on iPhone</span>
-    </section>
+  <header class="top">
+    <button class="brand" type="button" data-go="0" aria-label="fullcircle, back to the start">
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path class="brand-arc" d="M27.5 9.5A12 12 0 1 0 27.5 26.5" stroke-width="5" stroke-linecap="round"/><circle cx="31" cy="15" r="1.8" fill="#F2A65A"/><circle cx="31.6" cy="20" r="1.5" fill="#F6D86B"/></svg>
+      <span class="display">fullcircle</span>
+    </button>
+    <a class="join" href="mailto:support@getfullcircle.app?subject=Join%20the%20fullcircle%20beta">Join the beta</a>
+  </header>
 
-    <section class="points" aria-label="What Full Circle does">
-      <div class="card">
-        <h3>Save it</h3>
-        <p>A place, a recipe, a book, an idea. Share it from any app and it's kept.</p>
-      </div>
-      <div class="card">
-        <h3>Get to it</h3>
-        <p>A gentle plan for your week and a nudge at the right moment.</p>
-      </div>
-      <div class="card">
-        <h3>Close the loop</h3>
-        <p>Mark it done, say how it was, and see what you've lived each month.</p>
-      </div>
-    </section>
-  </main>
+  <div class="ring">
+    <svg viewBox="0 0 1000 1000" role="img" aria-label="A circle that is 0 percent full">
+      <g id="parallax">
+        <circle class="glow" cx="500" cy="500" r="340"/>
+        <g id="dots"></g>
+        <circle id="past" class="track" cx="500" cy="500" r="340" stroke-dasharray="2136.3 2136.3" transform="rotate(-90 500 500)" style="opacity:0"/>
+        <circle id="arc" class="track" cx="500" cy="500" r="340" stroke-dasharray="0 2136.3" transform="rotate(-90 500 500)" style="opacity:0"/>
+        <circle class="node" cx="500" cy="160" r="14"/>
+        <circle class="node" cx="840" cy="500" r="14"/>
+        <circle class="node" cx="500" cy="840" r="14"/>
+        <circle class="node" cx="160" cy="500" r="14"/>
+        <circle id="pulse" class="pulse" cx="500" cy="160" r="20"/>
+        <circle id="head" class="head" cx="500" cy="160" r="22" style="display:none"/>
+      </g>
+    </svg>
 
-  <footer>
+    <div class="copy">
+      <div class="ch c0"><div aria-hidden="true">
+        <span class="chip">FULLCIRCLE</span>
+        <div class="title display">Come full circle</div>
+        <div class="v"><div class="pills">
+          <span class="pill p-butter">Ramen at Koji</span><span class="pill p-leaf">Read Piranesi</span><span class="pill p-clay">Pottery class</span><span class="pill p-sea">Call Nana</span>
+        </div></div>
+      </div></div>
+
+      <div class="ch c1"><div aria-hidden="true">
+        <span class="chip"><b>01</b>SAVE</span>
+        <div class="title display">Save it</div>
+        <div class="v"><div class="card">
+          <span class="thumb g-sun"></span>
+          <span class="stack"><span class="t">Sunday market</span><span class="s">Old harbour · about 2h</span></span>
+          <span class="pill fern saved"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Saved</span>
+        </div></div>
+      </div></div>
+
+      <div class="ch c2"><div aria-hidden="true">
+        <span class="chip"><b>02</b>PLAN</span>
+        <div class="title display">Pick a few</div>
+        <div class="v">
+          <div class="card list">
+            <span class="row"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="var(--on-fern)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t">Sunday market</span></span>
+            <span class="row"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="var(--on-fern)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t">Read Piranesi</span></span>
+            <span class="row later"><span class="ck open"></span><span class="t">Pottery class</span></span>
+          </div>
+          <span class="s">2 this week</span>
+        </div>
+      </div></div>
+
+      <div class="ch c3"><div aria-hidden="true">
+        <span class="chip"><b>03</b>DO</span>
+        <div class="title display">Do one</div>
+        <div class="v">
+          <div class="swipe">
+            <span class="card ghost"></span>
+            <div class="card front">
+              <span class="thumb g-leaf"></span>
+              <span class="stack"><span class="t">Read Piranesi</span><span class="s">20 min · fits tonight</span></span>
+              <span class="stamp">DONE</span>
+            </div>
+          </div>
+          <span class="s">swipe right when it’s done</span>
+        </div>
+      </div></div>
+
+      <div class="ch c4"><div aria-hidden="true">
+        <span class="chip"><b>04</b>CLOSE</span>
+        <div class="title display">Close it</div>
+        <div class="v">
+          <span class="s">How was Sunday market?</span>
+          <div class="pills rate"><span class="pill fern loved">Loved it</span><span class="pill plain">It was fine</span><span class="pill plain">Let it go</span></div>
+        </div>
+      </div></div>
+
+      <div class="ch c5"><div aria-hidden="true">
+        <span class="chip"><b>05</b>INSIGHTS</span>
+        <div class="title display">See your month</div>
+        <div class="v"><div class="card month">
+          <span class="s">Your September</span>
+          <span class="t display">An outdoor month</span>
+          <span class="s">12 loops · 7 loved · 3 let go</span>
+          <span class="bars"><span style="width:12cqw;background:#8FCB9B"></span><span style="width:7cqw;background:#F2A65A"></span><span style="width:5cqw;background:#F6D86B"></span><span style="width:3cqw;background:#F0A897"></span><span style="width:3cqw;background:#7CC6CC"></span></span>
+        </div></div>
+      </div></div>
+
+      <div class="ch c6">
+        <div aria-hidden="true">
+          <span class="chip"><b>06</b>AND AGAIN</span>
+          <div class="title display">Go again</div>
+          <div class="v"><div class="card">
+            <span class="thumb g-sea"></span>
+            <span class="stack"><span class="s">October nudge</span><span class="t">Try a new trail</span></span>
+          </div></div>
+        </div>
+        <div class="cta">
+          <a class="btn go" href="mailto:support@getfullcircle.app?subject=Join%20the%20fullcircle%20beta">Join the beta<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <button class="btn again" type="button" data-go="0">Go round again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes" aria-hidden="true">
+    <div class="note c0"><span class="note-k">HOW IT WORKS</span><span class="note-h display">Save what matters. Then close the loop.</span><p>Everything you mean to get to, in one place. Scroll and watch what happens when you live it.</p></div>
+    <div class="note c1"><span class="note-k">01 · SAVE</span><span class="note-h display">Keep it in one tap.</span><p>A place, a recipe, a book, an idea. Share it from any app. It reads the link and guesses how long it takes.</p></div>
+    <div class="note c2"><span class="note-k">02 · PLAN</span><span class="note-h display">Promise a few.</span><p>Each Monday, pick 1, 2 or 3. The circle fills toward what you chose, never toward everything you ever saved.</p></div>
+    <div class="note c3"><span class="note-k">03 · DO</span><span class="note-h display">One small thing.</span><p>Three picks that fit today, each with a reason. Pushed back three times? Here is a smaller first step.</p></div>
+    <div class="note c4"><span class="note-k">04 · CLOSE</span><span class="note-h display">Close the loop.</span><p>Loved it, it was fine, or let it go. Letting go counts too.</p></div>
+    <div class="note c5"><span class="note-k">05 · INSIGHTS</span><span class="note-h display">Then it tells you about you.</span><p>On the 1st, a little gift: what you lived, what kept waiting, one pattern and one nudge for next month.</p></div>
+    <div class="note c6"><span class="note-k">06 · AND AGAIN</span><span class="note-h display">And round you go.</span><p>The nudge becomes your next save, and a new circle begins. In private beta on iPhone.</p></div>
+  </aside>
+
+  <div class="hint">
+    <button class="next" type="button" data-go="next"><span id="next-label">Start</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
+    <span class="hint-text" id="hint-text">or scroll, and the circle fills</span>
+  </div>
+
+  <footer class="foot">
     <span>© 2026 Full Circle</span>
-    <span><a href="/support">Support</a> · <a href="/privacy">Privacy policy</a> · <a href="mailto:support@getfullcircle.app">support@getfullcircle.app</a></span>
+    <a href="/support">Support</a>
+    <a href="/privacy">Privacy</a>
+    <a href="mailto:support@getfullcircle.app">support@getfullcircle.app</a>
   </footer>
 </div>
+
+<main>
+  <section class="sec"><h1 class="sr">fullcircle: save what matters, then close the loop.</h1><p class="sr">Everything you mean to get to, in one place. Scroll and watch what happens when you live it.</p></section>
+  <section class="sec"><h2 class="sr">Save it: keep it in one tap.</h2><p class="sr">A place, a recipe, a book, an idea. Share it from any app. It reads the link and guesses how long it takes.</p></section>
+  <section class="sec"><h2 class="sr">Pick a few: promise a few.</h2><p class="sr">Each Monday, pick 1, 2 or 3. The circle fills toward what you chose, never toward everything you ever saved.</p></section>
+  <section class="sec"><h2 class="sr">Do one: one small thing.</h2><p class="sr">Three picks that fit today, each with a reason. Pushed back three times? Here is a smaller first step.</p></section>
+  <section class="sec"><h2 class="sr">Close it: close the loop.</h2><p class="sr">Loved it, it was fine, or let it go. Letting go counts too.</p></section>
+  <section class="sec"><h2 class="sr">See your month: then it tells you about you.</h2><p class="sr">On the 1st, a little gift: what you lived, what kept waiting, one pattern and one nudge for next month.</p></section>
+  <section class="sec"><h2 class="sr">Go again: and round you go.</h2><p class="sr">The nudge becomes your next save, and a new circle begins. In private beta on iPhone.</p></section>
+</main>
+
+<script src="assets/landing.js"></script>
 </body>
 </html>
