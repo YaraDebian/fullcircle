@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<meta name="referrer" content="no-referrer" />
+<title>Set a new password · fullcircle</title>
+<meta name="theme-color" content="#F7F5EC" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1A1816" media="(prefers-color-scheme: dark)" />
+<link rel="icon" type="image/png" href="../assets/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="../assets/site.css?v=3" />
+<link rel="stylesheet" href="../assets/auth.css?v=1" />
+</head>
+<body class="auth">
+  <main>
+    <a class="brand" href="/"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M27.5 9.5A12 12 0 1 0 27.5 26.5" stroke="var(--fern)" stroke-width="5" stroke-linecap="round"/><circle cx="31" cy="15" r="1.8" fill="#F2A65A"/><circle cx="31.6" cy="20" r="1.5" fill="#F6D86B"/></svg>fullcircle</a>
+    <div id="form-view" class="stack">
+      <h1>Set a new password</h1>
+      <p>Opening this on your phone? You can also finish in the app.</p>
+    </div>
+    <a class="button secondary" id="open-app" href="fullcircle://reset-password">Open in fullcircle</a>
+    <form id="form">
+      <label>New password <input type="password" id="pw" autocomplete="new-password" minlength="6" required></label>
+      <label>Confirm it <input type="password" id="pw2" autocomplete="new-password" minlength="6" required></label>
+      <p class="error" id="error" hidden></p>
+      <button class="button" type="submit" id="save">Save password</button>
+    </form>
+    <div id="done" class="stack" hidden>
+      <h1>Password updated.</h1>
+      <p>Open fullcircle and sign in with your new password.</p>
+    </div>
+    <div id="failed" class="stack" hidden>
+      <h1>That link didn’t work.</h1>
+      <p class="error" id="reason"></p>
+      <p>Reset links expire after a while. Ask for a new one from the fullcircle sign-in screen.</p>
+    </div>
+    <footer><span><a href="/support">Support</a> · <a href="/privacy">Privacy</a></span></footer>
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js" integrity="sha384-A97u3Qnt9GZHURO9YJZRe7VQgGUeFzcv6I1oIGnUTxQrCxnpQMwR0/G8F2zt9abZ" crossorigin="anonymous"></script>
+<script>
+  // Public client values, the same ones shipped in the app. Keep in sync with app/.env if the key is rotated.
+  var SUPABASE_URL = "https://jdgxbrjhdmvdqqcjblpc.supabase.co";
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkZ3hicmpoZG12ZHFxY2pibHBjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0NzM4NDYsImV4cCI6MjEwNjA0OTg0Nn0.jFPQCqJVeeOJqzXgIbadGAN5Ft3PN9M8TNxLZKkSgKw";
+
+  var hash = location.hash;
+  var params = new URLSearchParams(hash.slice(1) || location.search.slice(1));
+  var $ = function (id) { return document.getElementById(id); };
+  history.replaceState(null, "", location.pathname);
+
+  function fail(message) {
+    ["form-view", "form", "open-app"].forEach(function (id) { $(id).hidden = true; });
+    $("failed").hidden = false;
+    $("reason").textContent = message;
+  }
+
+  if (!params.get("access_token") || !params.get("refresh_token")) {
+    fail((params.get("error_description") || "This link is missing its sign-in details.").replace(/\+/g, " "));
+  } else if (!window.supabase) {
+    fail("This page couldn’t load. Check your connection and open the link again.");
+  } else {
+    $("open-app").href = "fullcircle://reset-password" + hash;
+    var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+    });
+    var ready = client.auth.setSession({ access_token: params.get("access_token"), refresh_token: params.get("refresh_token") });
+
+    $("form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      $("error").hidden = true;
+      if ($("pw").value !== $("pw2").value) {
+        $("error").textContent = "Those don’t match.";
+        $("error").hidden = false;
+        return;
+      }
+      $("save").disabled = true;
+      $("save").textContent = "Saving…";
+      var session = await ready;
+      if (session.error) return fail("It may have expired or already been used.");
+      var result = await client.auth.updateUser({ password: $("pw").value });
+      if (result.error) {
+        $("error").textContent = result.error.message;
+        $("error").hidden = false;
+        $("save").disabled = false;
+        $("save").textContent = "Save password";
+        return;
+      }
+      await client.auth.signOut();
+      ["form-view", "form", "open-app"].forEach(function (id) { $(id).hidden = true; });
+      $("done").hidden = false;
+    });
+  }
+</script>
+</body>
+</html>

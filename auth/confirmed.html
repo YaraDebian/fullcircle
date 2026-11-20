@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Email confirmed · fullcircle</title>
+<meta name="theme-color" content="#F7F5EC" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1A1816" media="(prefers-color-scheme: dark)" />
+<link rel="icon" type="image/png" href="../assets/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="../assets/site.css?v=3" />
+<link rel="stylesheet" href="../assets/auth.css?v=1" />
+</head>
+<body class="auth">
+  <main>
+    <a class="brand" href="/"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M27.5 9.5A12 12 0 1 0 27.5 26.5" stroke="var(--fern)" stroke-width="5" stroke-linecap="round"/><circle cx="31" cy="15" r="1.8" fill="#F2A65A"/><circle cx="31.6" cy="20" r="1.5" fill="#F6D86B"/></svg>fullcircle</a>
+    <div id="ok" class="stack">
+      <h1>You’re in.</h1>
+      <p>Your email is confirmed. Go back to fullcircle and sign in to start closing loops.</p>
+    </div>
+    <div id="failed" class="stack" hidden>
+      <h1>That link didn’t work.</h1>
+      <p class="error" id="reason"></p>
+      <p>Links expire after a while. Sign up again in fullcircle to get a fresh one.</p>
+    </div>
+    <a class="button" href="fullcircle://">Open fullcircle</a>
+    <p class="note">On a computer? Just open fullcircle on your phone and sign in.</p>
+    <footer><span><a href="/support">Support</a> · <a href="/privacy">Privacy</a></span></footer>
+  </main>
+<script>
+  var params = new URLSearchParams(location.hash.slice(1) || location.search.slice(1));
+  if (params.get("error")) {
+    document.getElementById("ok").hidden = true;
+    document.getElementById("failed").hidden = false;
+    document.getElementById("reason").textContent = (params.get("error_description") || "").replace(/\+/g, " ");
+  }
+  history.replaceState(null, "", location.pathname);
+</script>
+</body>
+</html>
